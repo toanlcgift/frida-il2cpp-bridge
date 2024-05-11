@@ -1,6 +1,6 @@
 namespace Il2Cpp {
     /** Attaches the caller thread to Il2Cpp domain and executes the given block.  */
-    export async function perform<T>(block: () => T | Promise<T>, flag: "free" | "bind" | "leak" | "main" = "bind"): Promise<T> {
+    export async function perform<T>(block: () => T | Promise<T>, flag: "free" | "bind" | "leak" | "main" = "bind", nativeModuleName: string = ""): Promise<T> {
         try {
             const isInMainThread = await initialize(flag == "main");
 

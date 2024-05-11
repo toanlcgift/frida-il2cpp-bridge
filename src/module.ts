@@ -33,7 +33,7 @@ namespace Il2Cpp {
      * @internal
      * Waits for the IL2CPP native library to be loaded and initialized.
      */
-    export async function initialize(blocking = false): Promise<boolean> {
+    export async function initialize(blocking = false, nativeModuleName = ""): Promise<boolean> {
         Reflect.defineProperty(Il2Cpp, "module", {
             // prettier-ignore
             value: Process.platform == "darwin"
@@ -60,9 +60,13 @@ namespace Il2Cpp {
         return false;
     }
 
-    function getExpectedModuleNames(): string[] {
+    function getExpectedModuleNames(nativeModuleName = ""): string[] {
         if ((globalThis as any).IL2CPP_MODULE_NAME) {
             return [(globalThis as any).IL2CPP_MODULE_NAME];
+        }
+
+        if (nativeModuleName != "") {
+            return [nativeModuleName];
         }
 
         switch (Process.platform) {
