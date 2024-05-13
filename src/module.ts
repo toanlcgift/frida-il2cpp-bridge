@@ -38,8 +38,8 @@ namespace Il2Cpp {
             // prettier-ignore
             value: Process.platform == "darwin"
                 ? Process.findModuleByAddress(DebugSymbol.fromName("il2cpp_init").address) 
-                    ?? await forModule(...getExpectedModuleNames())
-                : await forModule(...getExpectedModuleNames())
+                ?? await forModule(...getExpectedModuleNames(nativeModuleName))
+                : await forModule(...getExpectedModuleNames(nativeModuleName))
         });
 
         // At this point, the IL2CPP native library has been loaded, but we

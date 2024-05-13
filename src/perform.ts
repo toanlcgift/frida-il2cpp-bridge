@@ -2,10 +2,10 @@ namespace Il2Cpp {
     /** Attaches the caller thread to Il2Cpp domain and executes the given block.  */
     export async function perform<T>(block: () => T | Promise<T>, flag: "free" | "bind" | "leak" | "main" = "bind", nativeModuleName: string = ""): Promise<T> {
         try {
-            const isInMainThread = await initialize(flag == "main");
+            const isInMainThread = await initialize(flag == "main", nativeModuleName);
 
             if (flag == "main" && !isInMainThread) {
-                return perform(() => Il2Cpp.mainThread.schedule(block), "free");
+                return perform(() => Il2Cpp.mainThread.schedule(block), "free", nativeModuleName);
             }
 
             let thread = Il2Cpp.currentThread;
