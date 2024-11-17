@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frida-il2cpp-bridge", "frida-il2cpp-bridge.esproj", "{AD5283C7-6F27-4044-B940-21AB2E69E11D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD5283C7-6F27-4044-B940-21AB2E69E11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5283C7-6F27-4044-B940-21AB2E69E11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5283C7-6F27-4044-B940-21AB2E69E11D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AD5283C7-6F27-4044-B940-21AB2E69E11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5283C7-6F27-4044-B940-21AB2E69E11D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5283C7-6F27-4044-B940-21AB2E69E11D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4922629B-CD23-4095-8672-4B9A3A082A96}
+	EndGlobalSection
+EndGlobal

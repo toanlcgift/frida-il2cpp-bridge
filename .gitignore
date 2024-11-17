@@ -3,3 +3,7 @@ build
 dist
 node_modules
 unity/*/Editor
+/.vs
+/.vscode
+/obj/Debug
+/yarn.lock
