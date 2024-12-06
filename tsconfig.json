@@ -1,18 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2022",
+    "target": "es2020",
     "lib": [ "es2020" ],
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
     "moduleResolution": "node",
-    "outDir": "dist",
-    "outFile": "dist/index.js",
-    "sourceRoot": ".",
-    "declaration": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "strict": true,
-    "stripInternal": true,
-    "plugins": [ 
-      { "transform": "ts-transformer-inline-file/transformer" }
-    ],
-  }
+    "baseUrl": "./node_modules",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+    "**/*.spec.ts"
+  ]
 }

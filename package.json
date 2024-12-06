@@ -1,49 +1,20 @@
 {
-  "name": "frida-il2cpp-bridge",
-  "version": "0.9.1",
-  "description": "A Frida module to dump, trace or hijack any Il2Cpp application at runtime, without needing the global-metadata.dat file.",
-  "keywords": [
-    "frida",
-    "il2cpp",
-    "dump",
-    "trace",
-    "global-metadata"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vfsfitvnm/frida-il2cpp-bridge.git"
-  },
-  "license": "MIT",
-  "author": "vfsfitvnm",
-  "exports": "./dist/index.js",
-  "module": "dist/index.js",
-  "main": "dist/index.js",
-  "type": "module",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "name": "frida-agent-beatsaber-metaquest",
+  "version": "1.0.0",
+  "description": "Frida agent written in TypeScript",
+  "private": true,
+  "main": "agent/index.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json"
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "bracketSpacing": true,
-    "printWidth": 160,
-    "tabWidth": 4,
-    "trailingComma": "none"
+    "prepare": "npm run build",
+    "build": "frida-compile -S agent/index.ts -o _agent.js -c",
+    "watch": "frida-compile -S agent/index.ts -o _agent.js -w"
   },
   "devDependencies": {
-    "@types/frida-gum": "^18.7.0",
-    "ts-patch": "^3.2.1",
-    "ts-transformer-inline-file": "^0.2.0"
-  },
-  "overrides": {
-    "ts-transformer-inline-file": {
-      "typescript": "^5.0.0"
-    }
-  },
-  "dependencies": {
-    "typescript": "^5.4.5"
+    "@types/frida-gum": "^18.1.0",
+    "@types/node": "^18.0.6",
+    "eslint": "^8.55.0",
+    "frida-compile": "^15.0.8",
+    "typescript": "^5.4.5",
+    "frida-il2cpp-bridge": "file:frida-il2cpp-bridge"
   }
 }
