@@ -1,13 +1,18 @@
 import "frida-il2cpp-bridge";
 
-var fileName = "/mnt/shared/Pictures/output.txt";
-File.writeAllText(fileName, "start");
-
 Il2Cpp.perform(() => {
+    const coreModule = Il2Cpp.domain.assembly("UnityEngine.CoreModule").image;
+    const sceneManager = coreModule.class("UnityEngine.SceneManagement.SceneManager");
+    const scene = coreModule.class("UnityEngine.SceneManagement.Scene");
+    console.log(scene.fields);
+    console.log(scene.methods);
+    
+    
+    const getActiveScene = sceneManager.method("GetActiveScene");
+    const resultScene = getActiveScene.invoke();
+    const sceneName = (resultScene as Il2Cpp.Object).tryField("name");
 
-    File.writeAllText(fileName, "perform start");
-    File.writeAllText(fileName, Il2Cpp.unityVersion);
-    File.writeAllText(fileName, JSON.stringify(Il2Cpp.domain.assemblies.map(x => x.name)));
+    console.log(sceneName);
 });
 
 

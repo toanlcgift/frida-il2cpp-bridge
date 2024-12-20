@@ -7,3 +7,4 @@ unity/*/Editor
 /.vscode
 /obj/Debug
 /yarn.lock
+/_agent.js
